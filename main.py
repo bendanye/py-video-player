@@ -1,7 +1,7 @@
-from video_service import VideoService
+from videoplayer.video_service import VideoService
 
-from video_player import VideoPlayer
-from playlist import Playlist
+from videoplayer.video_player import VideoPlayer
+from videoplayer.playlist import Playlist
 
 # url of the video
 url = "https://www.youtube.com/watch?v=vG2PNdI8axo"
