@@ -34,3 +34,4 @@ class VideoService:
         self.last_stop_time = self.player.get_current_time()
         self.last_played_video = self.player.get_current_video()
         self.player.stop()
+        return self.last_played_video, self.last_stop_time
