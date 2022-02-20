@@ -9,19 +9,18 @@ class VideoPlayer:
         self.current_video = None
 
     def play(self, video_url, start_from):
-        if not self._video_loaded():
-            self._load(video_url)
-        self.media_player.play()
-        self.media_player.set_time(start_from)
-
-    def _video_loaded(self):
-        return self.current_video is not None
+        self._load(video_url)
+        self._play(start_from)
 
     def _load(self, video_url):
         self.current_video = video_url
         video = pafy.new(video_url)
         best = video.getbest()
         self.media_player = vlc.MediaPlayer(best.url)
+
+    def _play(self, start_from):
+        self.media_player.play()
+        self.media_player.set_time(start_from)
 
     def stop(self):
         self.media_player.stop()
