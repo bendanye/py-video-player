@@ -15,5 +15,6 @@ try:
     while True:
         print(video_service.get_player_state())
 except KeyboardInterrupt:
-    print('Interrupted')
-    video_service.stop_video()
+    print('Stopping the video...')
+    video_url, timing = video_service.stop_video()
+    print(f"{video_url} - {timing}")
